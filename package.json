@@ -4,14 +4,17 @@
   "description": "Projeto Criando um CRUD com qualidade!",
   "main": "untitled.js",
   "scripts": {
-    "start": "node ./core/crud.js",
-    "dev": "nodemon ./core/crud.js",
+    "start": "node ./core/crud.ts",
+    "dev": "nodemon ./core/crud.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "@types/node": "^20.10.2",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
   }
 }

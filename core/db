@@ -1,1 +1,17 @@
-Hoje eu preciso gravar aulas!
+{
+  "todos": [
+    [
+      [],
+      {
+        "date": "2023-12-02T11:59:14.398Z",
+        "content": "Hoje eu preciso gravar aulas!",
+        "done": false
+      }
+    ],
+    {
+      "date": "2023-12-02T11:59:14.402Z",
+      "content": "Segunda TODO",
+      "done": false
+    }
+  ]
+}
