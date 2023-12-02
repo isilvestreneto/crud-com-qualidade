@@ -1,17 +1,16 @@
 {
   "todos": [
-    [
-      [],
-      {
-        "date": "2023-12-02T11:59:14.398Z",
-        "content": "Hoje eu preciso gravar aulas!",
-        "done": false
-      }
-    ],
     {
-      "date": "2023-12-02T11:59:14.402Z",
-      "content": "Segunda TODO",
+      "id": "bb99ae80-cf21-4c0d-8608-c6077713cc2a",
+      "date": "2023-12-02T20:23:29.939Z",
+      "content": "Primeira TODO",
       "done": false
+    },
+    {
+      "id": "c28228c5-3063-4166-bbcf-ef944044388f",
+      "date": "2023-12-02T20:23:29.942Z",
+      "content": "Algo novo :)",
+      "done": true
     }
   ]
 }
