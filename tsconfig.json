@@ -21,7 +21,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "incremental": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*": [
+        "src/ui/*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
