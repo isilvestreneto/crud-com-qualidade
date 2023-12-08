@@ -1,7 +1,7 @@
-import fs from 'fs';
-import { v4 as uuid } from 'uuid';
+import fs from "fs";
+import { v4 as uuid } from "uuid";
 
-const DB_FILE_PATH = './core/db';
+const DB_FILE_PATH = "./core/db";
 
 interface Todo {
     id: string;
@@ -25,8 +25,8 @@ function create(content: string): Todo {
 }
 
 function read(): Array<Todo> {
-    const dbString = fs.readFileSync(DB_FILE_PATH, 'utf-8');
-    const db = JSON.parse(dbString || '{}');
+    const dbString = fs.readFileSync(DB_FILE_PATH, "utf-8");
+    const db = JSON.parse(dbString || "{}");
     if (!db.todos) {
         // Fail fast validation
         return [];
@@ -43,7 +43,7 @@ function updateContentById(id: string, content: string): Todo {
 function update(id: string, partialTodo: Partial<Todo>): Todo {
     let updatedTodo;
     const todos = read();
-    todos.forEach(currentTodo => {
+    todos.forEach((currentTodo) => {
         const isToUpdate = currentTodo.id === id;
         if (isToUpdate) {
             updatedTodo = Object.assign(currentTodo, partialTodo);
@@ -52,7 +52,7 @@ function update(id: string, partialTodo: Partial<Todo>): Todo {
     fs.writeFileSync(DB_FILE_PATH, JSON.stringify({ todos }, null, 2));
 
     if (!updatedTodo) {
-        throw new Error('Please, provide another ID! :(');
+        throw new Error("Please, provide another ID! :(");
     }
 
     return updatedTodo;
@@ -67,20 +67,23 @@ function deleteById(id: string): void {
         }
         return true;
     });
-    fs.writeFileSync(DB_FILE_PATH, JSON.stringify({ todos: todosWithoutOne }, null, 2));
+    fs.writeFileSync(
+        DB_FILE_PATH,
+        JSON.stringify({ todos: todosWithoutOne }, null, 2)
+    );
 }
 
 function CLEAR_DB() {
-    fs.writeFileSync(DB_FILE_PATH, '');
+    fs.writeFileSync(DB_FILE_PATH, "");
 }
 
 // [SIMULATION]
-console.log('[CRUD]');
+console.log("[CRUD]");
 CLEAR_DB();
 
-const primeiraTodo = create('Primeira TODO');
-const segundaTodo = create('Segunda TODO');
-const terceiraTodo = create('Terceira TODO');
+const primeiraTodo = create("Primeira TODO");
+const segundaTodo = create("Segunda TODO");
+const terceiraTodo = create("Terceira TODO");
 
 console.table(read());
 
@@ -97,11 +100,11 @@ done: true`);
 updateContentById(segundaTodo.id, updatedContent);
 
 update(segundaTodo.id, {
-    done: true
+    done: true,
 });
 
 console.log();
 
-console.log("After update:")
+console.log("After update:");
 
 console.table(read());
