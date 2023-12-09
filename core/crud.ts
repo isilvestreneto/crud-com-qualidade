@@ -24,7 +24,7 @@ function create(content: string): Todo {
     return todo;
 }
 
-function read(): Array<Todo> {
+export function read(): Array<Todo> {
     const dbString = fs.readFileSync(DB_FILE_PATH, "utf-8");
     const db = JSON.parse(dbString || "{}");
     if (!db.todos) {
@@ -78,33 +78,18 @@ function CLEAR_DB() {
 }
 
 // [SIMULATION]
-console.log("[CRUD]");
 CLEAR_DB();
 
 const primeiraTodo = create("Primeira TODO");
 const segundaTodo = create("Segunda TODO");
-const terceiraTodo = create("Terceira TODO");
-
-console.table(read());
+create("Terceira TODO");
 
 deleteById(primeiraTodo.id);
 
-console.log();
-
 const updatedContent = "Algo novo :)";
-
-console.log(`[UPDATE] ${segundaTodo.id}
-content: ${updatedContent}
-done: true`);
 
 updateContentById(segundaTodo.id, updatedContent);
 
 update(segundaTodo.id, {
     done: true,
 });
-
-console.log();
-
-console.log("After update:");
-
-console.table(read());
