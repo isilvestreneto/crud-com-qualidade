@@ -10,4 +10,3 @@ function get(_: NextApiRequest, res: NextApiResponse) {
 export const todoController = {
     get,
 };
-
